@@ -2,10 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NFCReaderUsageDescription</key>
+    <string> Use NFC to Read data from Zebra device to Pair.</string>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>Zebra RFID Demo App uses Bluetooth to find, connect and communicate with nearby Zebra devices. Please grant access.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>Zebra RFID Demo App uses Bluetooth to find, connect and communicate with nearby Zebra devices. Please grant access.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Used to scan barcodes</string>
+    <key></key>
+    <false/>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>external-accessory</string>
+        <string>bluetooth-central</string>
+    </array>
+    <key>UISupportedExternalAccessoryProtocols</key>
+    <array>
+        <string>com.zebra.scanner.SSI</string>
+        <string>com.motorolasolutions.scanner</string>
+        <string>com.symbol.rfd8X00_easytext</string>
+        <string>com.zebra.rfd8X00_easytext</string>
+    </array>
+    
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
+	
 		<key>UISceneConfigurations</key>
 		<dict>
 			<key>UIWindowSceneSessionRoleApplication</key>

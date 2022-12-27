@@ -13,6 +13,18 @@
 		9ACB43D5295A096A0038C2E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ACB43D3295A096A0038C2E7 /* Main.storyboard */; };
 		9ACB43D7295A096B0038C2E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ACB43D6295A096B0038C2E7 /* Assets.xcassets */; };
 		9ACB43DA295A096B0038C2E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ACB43D8295A096B0038C2E7 /* LaunchScreen.storyboard */; };
+		9ACB43E3295A09E70038C2E7 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB43E2295A09E70038C2E7 /* ExternalAccessory.framework */; };
+		9ACB43E5295A09FE0038C2E7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB43E4295A09FE0038C2E7 /* CoreBluetooth.framework */; };
+		9ACB43E7295A0A060038C2E7 /* libintegratedsdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB43E6295A0A060038C2E7 /* libintegratedsdk.a */; };
+		9ACB43EA295A0E630038C2E7 /* libsymbolrfid-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB43E8295A0E630038C2E7 /* libsymbolrfid-sdk.a */; };
+		9ACB43EB295A0E630038C2E7 /* libsymbolbt-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB43E9295A0E630038C2E7 /* libsymbolbt-sdk.a */; };
+		9ACB43EE295A0F760038C2E7 /* demo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB43ED295A0F760038C2E7 /* demo.m */; };
+		9ACB43F0295A10F70038C2E7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB43EF295A10F70038C2E7 /* AudioToolbox.framework */; };
+		9ACB43F2295A16B50038C2E7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB43F1295A16B50038C2E7 /* libz.tbd */; };
+		9ACB43F5295B68C50038C2E7 /* ScannerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB43F3295B68C50038C2E7 /* ScannerObject.m */; };
+		9ACB43FC295B69860038C2E7 /* BarcodeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB43F6295B69860038C2E7 /* BarcodeData.m */; };
+		9ACB43FD295B69860038C2E7 /* BarcodeTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB43F9295B69860038C2E7 /* BarcodeTypes.m */; };
+		9ACB43FE295B69860038C2E7 /* BarcodeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB43FA295B69860038C2E7 /* BarcodeList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +36,25 @@
 		9ACB43D6295A096B0038C2E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9ACB43D9295A096B0038C2E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9ACB43DB295A096B0038C2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ACB43E2295A09E70038C2E7 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		9ACB43E4295A09FE0038C2E7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		9ACB43E6295A0A060038C2E7 /* libintegratedsdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libintegratedsdk.a; path = "symbolrfid-sdk/libintegratedsdk.a"; sourceTree = "<group>"; };
+		9ACB43E8295A0E630038C2E7 /* libsymbolrfid-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsymbolrfid-sdk.a"; path = "symbolrfid-sdk/libsymbolrfid-sdk.a"; sourceTree = "<group>"; };
+		9ACB43E9295A0E630038C2E7 /* libsymbolbt-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsymbolbt-sdk.a"; path = "symbolrfid-sdk/libsymbolbt-sdk.a"; sourceTree = "<group>"; };
+		9ACB43EC295A0F750038C2E7 /* rfid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rfid-Bridging-Header.h"; sourceTree = "<group>"; };
+		9ACB43ED295A0F760038C2E7 /* demo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = demo.m; sourceTree = "<group>"; };
+		9ACB43EF295A10F70038C2E7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9ACB43F1295A16B50038C2E7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9ACB43F3295B68C50038C2E7 /* ScannerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerObject.m; sourceTree = "<group>"; };
+		9ACB43F4295B68C50038C2E7 /* ScannerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerObject.h; sourceTree = "<group>"; };
+		9ACB43F6295B69860038C2E7 /* BarcodeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarcodeData.m; sourceTree = "<group>"; };
+		9ACB43F7295B69860038C2E7 /* BarcodeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarcodeData.h; sourceTree = "<group>"; };
+		9ACB43F8295B69860038C2E7 /* BarcodeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarcodeList.h; sourceTree = "<group>"; };
+		9ACB43F9295B69860038C2E7 /* BarcodeTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarcodeTypes.m; sourceTree = "<group>"; };
+		9ACB43FA295B69860038C2E7 /* BarcodeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarcodeList.m; sourceTree = "<group>"; };
+		9ACB43FB295B69860038C2E7 /* BarcodeTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarcodeTypes.h; sourceTree = "<group>"; };
+		9ACB43FF295B6D490038C2E7 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		9ACB4400295B6D890038C2E7 /* ui_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +62,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACB43F2295A16B50038C2E7 /* libz.tbd in Frameworks */,
+				9ACB43F0295A10F70038C2E7 /* AudioToolbox.framework in Frameworks */,
+				9ACB43EA295A0E630038C2E7 /* libsymbolrfid-sdk.a in Frameworks */,
+				9ACB43EB295A0E630038C2E7 /* libsymbolbt-sdk.a in Frameworks */,
+				9ACB43E7295A0A060038C2E7 /* libintegratedsdk.a in Frameworks */,
+				9ACB43E5295A09FE0038C2E7 /* CoreBluetooth.framework in Frameworks */,
+				9ACB43E3295A09E70038C2E7 /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +78,21 @@
 		9ACB43C1295A096A0038C2E7 = {
 			isa = PBXGroup;
 			children = (
+				9ACB4400295B6D890038C2E7 /* ui_config.h */,
+				9ACB43FF295B6D490038C2E7 /* config.h */,
+				9ACB43F7295B69860038C2E7 /* BarcodeData.h */,
+				9ACB43F6295B69860038C2E7 /* BarcodeData.m */,
+				9ACB43F8295B69860038C2E7 /* BarcodeList.h */,
+				9ACB43FA295B69860038C2E7 /* BarcodeList.m */,
+				9ACB43FB295B69860038C2E7 /* BarcodeTypes.h */,
+				9ACB43F9295B69860038C2E7 /* BarcodeTypes.m */,
+				9ACB43F4295B68C50038C2E7 /* ScannerObject.h */,
+				9ACB43F3295B68C50038C2E7 /* ScannerObject.m */,
+				9ACB43ED295A0F760038C2E7 /* demo.m */,
 				9ACB43CC295A096A0038C2E7 /* rfid */,
 				9ACB43CB295A096A0038C2E7 /* Products */,
+				9ACB43E1295A09E70038C2E7 /* Frameworks */,
+				9ACB43EC295A0F750038C2E7 /* rfid-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +116,20 @@
 				9ACB43DB295A096B0038C2E7 /* Info.plist */,
 			);
 			path = rfid;
+			sourceTree = "<group>";
+		};
+		9ACB43E1295A09E70038C2E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9ACB43F1295A16B50038C2E7 /* libz.tbd */,
+				9ACB43EF295A10F70038C2E7 /* AudioToolbox.framework */,
+				9ACB43E9295A0E630038C2E7 /* libsymbolbt-sdk.a */,
+				9ACB43E8295A0E630038C2E7 /* libsymbolrfid-sdk.a */,
+				9ACB43E6295A0A060038C2E7 /* libintegratedsdk.a */,
+				9ACB43E4295A09FE0038C2E7 /* CoreBluetooth.framework */,
+				9ACB43E2295A09E70038C2E7 /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +164,7 @@
 				TargetAttributes = {
 					9ACB43C9295A096A0038C2E7 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 				};
 			};
@@ -140,7 +206,12 @@
 			files = (
 				9ACB43D2295A096A0038C2E7 /* ViewController.swift in Sources */,
 				9ACB43CE295A096A0038C2E7 /* AppDelegate.swift in Sources */,
+				9ACB43FC295B69860038C2E7 /* BarcodeData.m in Sources */,
+				9ACB43EE295A0F760038C2E7 /* demo.m in Sources */,
+				9ACB43FE295B69860038C2E7 /* BarcodeList.m in Sources */,
+				9ACB43FD295B69860038C2E7 /* BarcodeTypes.m in Sources */,
 				9ACB43D0295A096A0038C2E7 /* SceneDelegate.swift in Sources */,
+				9ACB43F5295B68C50038C2E7 /* ScannerObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +356,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NWZ65DQ9H;
@@ -295,16 +368,24 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/symbolrfid-sdk",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lmsoftware.rfid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "rfid-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/symbolrfid-sdk/include/";
 			};
 			name = Debug;
 		};
@@ -313,6 +394,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NWZ65DQ9H;
@@ -323,16 +406,23 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/symbolrfid-sdk",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lmsoftware.rfid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "rfid-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/symbolrfid-sdk/include/";
 			};
 			name = Release;
 		};
