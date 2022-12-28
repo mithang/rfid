@@ -25,7 +25,23 @@
 		9ACB43FC295B69860038C2E7 /* BarcodeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB43F6295B69860038C2E7 /* BarcodeData.m */; };
 		9ACB43FD295B69860038C2E7 /* BarcodeTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB43F9295B69860038C2E7 /* BarcodeTypes.m */; };
 		9ACB43FE295B69860038C2E7 /* BarcodeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB43FA295B69860038C2E7 /* BarcodeList.m */; };
-		BFCD4CE3295C8CBB00479D96 /* ActiveReader.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4CE1295C8CBB00479D96 /* ActiveReader.m */; };
+		9ACB4403295C8B930038C2E7 /* ActiveReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4402295C8B930038C2E7 /* ActiveReader.m */; };
+		9ACB4406295C90720038C2E7 /* RadioOperationEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4405295C90720038C2E7 /* RadioOperationEngine.m */; };
+		9ACB4409295C90FE0038C2E7 /* InventoryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4408295C90FE0038C2E7 /* InventoryData.m */; };
+		9ACB440C295C91500038C2E7 /* InventoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB440B295C91500038C2E7 /* InventoryItem.m */; };
+		9ACB440F295C919A0038C2E7 /* RfidAppEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB440D295C919A0038C2E7 /* RfidAppEngine.m */; };
+		9ACB4412295C91DC0038C2E7 /* SledConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4411295C91DC0038C2E7 /* SledConfiguration.m */; };
+		9ACB4415295C92140038C2E7 /* RegionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4414295C92140038C2E7 /* RegionData.m */; };
+		9ACB4418295C92850038C2E7 /* EnumMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4416295C92850038C2E7 /* EnumMapper.m */; };
+		9ACB441B295C92C30038C2E7 /* AppConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4419295C92C30038C2E7 /* AppConfiguration.m */; };
+		9ACB441E295C933B0038C2E7 /* TaglistDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB441C295C933A0038C2E7 /* TaglistDataObject.m */; };
+		9ACB4421295C93780038C2E7 /* FileExportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4420295C93780038C2E7 /* FileExportManager.m */; };
+		9ACB4424295C93A90038C2E7 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4422295C93A90038C2E7 /* AlertView.m */; };
+		9ACB4427295C93DF0038C2E7 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4425295C93DF0038C2E7 /* MBProgressHUD.m */; };
+		9ACB442A295C94680038C2E7 /* LinkProfileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4428295C94680038C2E7 /* LinkProfileObject.m */; };
+		9ACB4431295C985C0038C2E7 /* ScannerEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4430295C985C0038C2E7 /* ScannerEngine.m */; };
+		9ACB4433295C99380038C2E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB4432295C99380038C2E7 /* Foundation.framework */; };
+		9ACB4435295C99440038C2E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB4434295C99440038C2E7 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +72,39 @@
 		9ACB43FB295B69860038C2E7 /* BarcodeTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarcodeTypes.h; sourceTree = "<group>"; };
 		9ACB43FF295B6D490038C2E7 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		9ACB4400295B6D890038C2E7 /* ui_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_config.h; sourceTree = "<group>"; };
-		BFCD4CE1295C8CBB00479D96 /* ActiveReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActiveReader.m; path = ../123RFID_IOS_Mobile_1.1.24/Zebra_RFID_SDK_iOS_v1.1.24_SRC/RFIDDemoApp/ActiveReader.m; sourceTree = "<group>"; };
-		BFCD4CE2295C8CBB00479D96 /* ActiveReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveReader.h; path = ../123RFID_IOS_Mobile_1.1.24/Zebra_RFID_SDK_iOS_v1.1.24_SRC/RFIDDemoApp/ActiveReader.h; sourceTree = "<group>"; };
+		9ACB4401295C8B920038C2E7 /* ActiveReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveReader.h; sourceTree = "<group>"; };
+		9ACB4402295C8B930038C2E7 /* ActiveReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveReader.m; sourceTree = "<group>"; };
+		9ACB4404295C90720038C2E7 /* RadioOperationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioOperationEngine.h; sourceTree = "<group>"; };
+		9ACB4405295C90720038C2E7 /* RadioOperationEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioOperationEngine.m; sourceTree = "<group>"; };
+		9ACB4407295C90FE0038C2E7 /* InventoryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryData.h; sourceTree = "<group>"; };
+		9ACB4408295C90FE0038C2E7 /* InventoryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryData.m; sourceTree = "<group>"; };
+		9ACB440A295C91500038C2E7 /* InventoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryItem.h; sourceTree = "<group>"; };
+		9ACB440B295C91500038C2E7 /* InventoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryItem.m; sourceTree = "<group>"; };
+		9ACB440D295C919A0038C2E7 /* RfidAppEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RfidAppEngine.m; sourceTree = "<group>"; };
+		9ACB440E295C919A0038C2E7 /* RfidAppEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAppEngine.h; sourceTree = "<group>"; };
+		9ACB4410295C91DC0038C2E7 /* SledConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SledConfiguration.h; sourceTree = "<group>"; };
+		9ACB4411295C91DC0038C2E7 /* SledConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SledConfiguration.m; sourceTree = "<group>"; };
+		9ACB4413295C92140038C2E7 /* RegionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionData.h; sourceTree = "<group>"; };
+		9ACB4414295C92140038C2E7 /* RegionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionData.m; sourceTree = "<group>"; };
+		9ACB4416295C92850038C2E7 /* EnumMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnumMapper.m; sourceTree = "<group>"; };
+		9ACB4417295C92850038C2E7 /* EnumMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnumMapper.h; sourceTree = "<group>"; };
+		9ACB4419295C92C30038C2E7 /* AppConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfiguration.m; sourceTree = "<group>"; };
+		9ACB441A295C92C30038C2E7 /* AppConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfiguration.h; sourceTree = "<group>"; };
+		9ACB441C295C933A0038C2E7 /* TaglistDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaglistDataObject.m; sourceTree = "<group>"; };
+		9ACB441D295C933B0038C2E7 /* TaglistDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaglistDataObject.h; sourceTree = "<group>"; };
+		9ACB441F295C93780038C2E7 /* FileExportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileExportManager.h; sourceTree = "<group>"; };
+		9ACB4420295C93780038C2E7 /* FileExportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileExportManager.m; sourceTree = "<group>"; };
+		9ACB4422295C93A90038C2E7 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		9ACB4423295C93A90038C2E7 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		9ACB4425295C93DF0038C2E7 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		9ACB4426295C93DF0038C2E7 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		9ACB4428295C94680038C2E7 /* LinkProfileObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkProfileObject.m; sourceTree = "<group>"; };
+		9ACB4429295C94680038C2E7 /* LinkProfileObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkProfileObject.h; sourceTree = "<group>"; };
+		9ACB442B295C94860038C2E7 /* RfidAppKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAppKeys.h; sourceTree = "<group>"; };
+		9ACB442F295C985C0038C2E7 /* ScannerEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerEngine.h; sourceTree = "<group>"; };
+		9ACB4430295C985C0038C2E7 /* ScannerEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerEngine.m; sourceTree = "<group>"; };
+		9ACB4432295C99380038C2E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9ACB4434295C99440038C2E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACB4435295C99440038C2E7 /* UIKit.framework in Frameworks */,
+				9ACB4433295C99380038C2E7 /* Foundation.framework in Frameworks */,
 				9ACB43F2295A16B50038C2E7 /* libz.tbd in Frameworks */,
 				9ACB43F0295A10F70038C2E7 /* AudioToolbox.framework in Frameworks */,
 				9ACB43EA295A0E630038C2E7 /* libsymbolrfid-sdk.a in Frameworks */,
@@ -81,8 +130,37 @@
 		9ACB43C1295A096A0038C2E7 = {
 			isa = PBXGroup;
 			children = (
-				BFCD4CE2295C8CBB00479D96 /* ActiveReader.h */,
-				BFCD4CE1295C8CBB00479D96 /* ActiveReader.m */,
+				9ACB442F295C985C0038C2E7 /* ScannerEngine.h */,
+				9ACB4430295C985C0038C2E7 /* ScannerEngine.m */,
+				9ACB442B295C94860038C2E7 /* RfidAppKeys.h */,
+				9ACB4429295C94680038C2E7 /* LinkProfileObject.h */,
+				9ACB4428295C94680038C2E7 /* LinkProfileObject.m */,
+				9ACB4426295C93DF0038C2E7 /* MBProgressHUD.h */,
+				9ACB4425295C93DF0038C2E7 /* MBProgressHUD.m */,
+				9ACB4423295C93A90038C2E7 /* AlertView.h */,
+				9ACB4422295C93A90038C2E7 /* AlertView.m */,
+				9ACB441F295C93780038C2E7 /* FileExportManager.h */,
+				9ACB4420295C93780038C2E7 /* FileExportManager.m */,
+				9ACB441D295C933B0038C2E7 /* TaglistDataObject.h */,
+				9ACB441C295C933A0038C2E7 /* TaglistDataObject.m */,
+				9ACB441A295C92C30038C2E7 /* AppConfiguration.h */,
+				9ACB4419295C92C30038C2E7 /* AppConfiguration.m */,
+				9ACB4417295C92850038C2E7 /* EnumMapper.h */,
+				9ACB4416295C92850038C2E7 /* EnumMapper.m */,
+				9ACB4413295C92140038C2E7 /* RegionData.h */,
+				9ACB4414295C92140038C2E7 /* RegionData.m */,
+				9ACB4410295C91DC0038C2E7 /* SledConfiguration.h */,
+				9ACB4411295C91DC0038C2E7 /* SledConfiguration.m */,
+				9ACB440E295C919A0038C2E7 /* RfidAppEngine.h */,
+				9ACB440D295C919A0038C2E7 /* RfidAppEngine.m */,
+				9ACB440A295C91500038C2E7 /* InventoryItem.h */,
+				9ACB440B295C91500038C2E7 /* InventoryItem.m */,
+				9ACB4407295C90FE0038C2E7 /* InventoryData.h */,
+				9ACB4408295C90FE0038C2E7 /* InventoryData.m */,
+				9ACB4404295C90720038C2E7 /* RadioOperationEngine.h */,
+				9ACB4405295C90720038C2E7 /* RadioOperationEngine.m */,
+				9ACB4401295C8B920038C2E7 /* ActiveReader.h */,
+				9ACB4402295C8B930038C2E7 /* ActiveReader.m */,
 				9ACB4400295B6D890038C2E7 /* ui_config.h */,
 				9ACB43FF295B6D490038C2E7 /* config.h */,
 				9ACB43F7295B69860038C2E7 /* BarcodeData.h */,
@@ -126,6 +204,8 @@
 		9ACB43E1295A09E70038C2E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9ACB4434295C99440038C2E7 /* UIKit.framework */,
+				9ACB4432295C99380038C2E7 /* Foundation.framework */,
 				9ACB43F1295A16B50038C2E7 /* libz.tbd */,
 				9ACB43EF295A10F70038C2E7 /* AudioToolbox.framework */,
 				9ACB43E9295A0E630038C2E7 /* libsymbolbt-sdk.a */,
@@ -209,14 +289,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACB4412295C91DC0038C2E7 /* SledConfiguration.m in Sources */,
+				9ACB4418295C92850038C2E7 /* EnumMapper.m in Sources */,
+				9ACB4421295C93780038C2E7 /* FileExportManager.m in Sources */,
 				9ACB43D2295A096A0038C2E7 /* ViewController.swift in Sources */,
 				9ACB43CE295A096A0038C2E7 /* AppDelegate.swift in Sources */,
+				9ACB4424295C93A90038C2E7 /* AlertView.m in Sources */,
+				9ACB441B295C92C30038C2E7 /* AppConfiguration.m in Sources */,
 				9ACB43FC295B69860038C2E7 /* BarcodeData.m in Sources */,
-				BFCD4CE3295C8CBB00479D96 /* ActiveReader.m in Sources */,
+				9ACB440C295C91500038C2E7 /* InventoryItem.m in Sources */,
+				9ACB441E295C933B0038C2E7 /* TaglistDataObject.m in Sources */,
+				9ACB442A295C94680038C2E7 /* LinkProfileObject.m in Sources */,
+				9ACB4403295C8B930038C2E7 /* ActiveReader.m in Sources */,
 				9ACB43EE295A0F760038C2E7 /* demo.m in Sources */,
+				9ACB4409295C90FE0038C2E7 /* InventoryData.m in Sources */,
+				9ACB4427295C93DF0038C2E7 /* MBProgressHUD.m in Sources */,
 				9ACB43FE295B69860038C2E7 /* BarcodeList.m in Sources */,
+				9ACB4431295C985C0038C2E7 /* ScannerEngine.m in Sources */,
 				9ACB43FD295B69860038C2E7 /* BarcodeTypes.m in Sources */,
+				9ACB440F295C919A0038C2E7 /* RfidAppEngine.m in Sources */,
+				9ACB4406295C90720038C2E7 /* RadioOperationEngine.m in Sources */,
 				9ACB43D0295A096A0038C2E7 /* SceneDelegate.swift in Sources */,
+				9ACB4415295C92140038C2E7 /* RegionData.m in Sources */,
 				9ACB43F5295B68C50038C2E7 /* ScannerObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

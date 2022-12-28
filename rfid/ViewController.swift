@@ -35,7 +35,7 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
 
     var m_DevListDelegates: [AnyHashable]?
     var m_ReadEventListDelegates: [AnyHashable]?
-    var m_TriggerEventDelegates: [AnyHashable]?
+    var m_TriggerEventDelegates: [zt_IRfidAppEngineTriggerEventDelegate]?
     var m_BatteryEventDelegates: [AnyHashable]?
 
     var multiTagEventDelegates: [AnyHashable]?
@@ -45,7 +45,7 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
     var m_BatteryStatusStr: String?
     let m_BatteryInfoGuard: NSLock? = nil
 
-//    let m_RadioOperationEngine: zt_RadioOperationEngine? = nil
+    var m_RadioOperationEngine: zt_RadioOperationEngine? = nil
     var zebraScannerId: Int = 0
 //    let previousScanner: Int
     
@@ -79,7 +79,7 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
 //
 //        m_InventoryData = zt_InventoryData.init()
 
-        m_TriggerEventDelegates = [AnyHashable]()
+        m_TriggerEventDelegates = [zt_IRfidAppEngineTriggerEventDelegate]()
         m_BatteryEventDelegates = [AnyHashable]()
         multiTagEventDelegates = [AnyHashable]()
 //
@@ -87,7 +87,7 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
 //        m_BatteryStatusStr = ""
 //        m_BatteryInfoGuard = NSLock()
 //
-//        m_RadioOperationEngine = zt_RadioOperationEngine.init()
+        m_RadioOperationEngine = zt_RadioOperationEngine.init()
 //
 //        initializeRfidSdkWithAppSettings()
         
@@ -99,33 +99,35 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
     
     //start and searching device
     func startRfid(){
-           // variable to store single shared instance of API object
-           
-           // receiving single shared instance of API object
-           m_RfidSdkApi = srfidSdkFactory.createRfidSdkApiInstance()
-           m_RfidSdkApi?.srfidSetDelegate(self)
-           
-           var op_mode =  SRFID_OPMODE_MFI
 
-           let notifications_mask = SRFID_EVENT_READER_APPEARANCE | SRFID_EVENT_READER_DISAPPEARANCE | SRFID_EVENT_SESSION_ESTABLISHMENT | SRFID_EVENT_SESSION_TERMINATION
-           m_RfidSdkApi?.srfidSetOperationalMode(Int32(op_mode))
-           m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(notifications_mask))
-           m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_READ | SRFID_EVENT_MASK_STATUS | SRFID_EVENT_MASK_STATUS_OPERENDSUMMARY))
-           m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_TEMPERATURE | SRFID_EVENT_MASK_POWER | SRFID_EVENT_MASK_DATABASE))
-           //[apiInstance srfidUnsubsribeForEvents:(SRFID_EVENT_MASK_RADIOERROR | SRFID_EVENT_MASK_POWER | SRFID_EVENT_MASK_TEMPERATURE)];
-           m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_PROXIMITY))
-           m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_TRIGGER))
-           m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_BATTERY))
-           m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_MULTI_PROXIMITY))
-           m_RfidSdkApi?.srfidEnableAvailableReadersDetection(true)
-           m_RfidSdkApi?.srfidEnableAutomaticSessionReestablishment(false)
-           
-           // getting SDK version string
-           let sdk_version = m_RfidSdkApi?.srfidGetSdkVersion()
-           print("LM: Zebra RFID SDK version: \(sdk_version ?? "")\n")
-           
-           
-       }
+        // variable to store single shared instance of API object
+        
+        // receiving single shared instance of API object
+        m_RfidSdkApi = srfidSdkFactory.createRfidSdkApiInstance()
+        m_RfidSdkApi?.srfidSetDelegate(self)
+        
+        var op_mode =  SRFID_OPMODE_MFI
+
+        let notifications_mask = SRFID_EVENT_READER_APPEARANCE | SRFID_EVENT_READER_DISAPPEARANCE | SRFID_EVENT_SESSION_ESTABLISHMENT | SRFID_EVENT_SESSION_TERMINATION
+        m_RfidSdkApi?.srfidSetOperationalMode(Int32(op_mode))
+        m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(notifications_mask))
+        m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_READ | SRFID_EVENT_MASK_STATUS | SRFID_EVENT_MASK_STATUS_OPERENDSUMMARY))
+        m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_TEMPERATURE | SRFID_EVENT_MASK_POWER | SRFID_EVENT_MASK_DATABASE))
+        //[apiInstance srfidUnsubsribeForEvents:(SRFID_EVENT_MASK_RADIOERROR | SRFID_EVENT_MASK_POWER | SRFID_EVENT_MASK_TEMPERATURE)];
+        m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_PROXIMITY))
+        m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_TRIGGER))
+        m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_BATTERY))
+        m_RfidSdkApi?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_MULTI_PROXIMITY))
+        m_RfidSdkApi?.srfidEnableAvailableReadersDetection(true)
+        m_RfidSdkApi?.srfidEnableAutomaticSessionReestablishment(false)
+        
+        // getting SDK version string
+        let sdk_version = m_RfidSdkApi?.srfidGetSdkVersion()
+        print("LM: Zebra RFID SDK version: \(sdk_version ?? "")\n")
+        
+        
+    }
+
     
     //start and searching device
     func startBarcode(){
@@ -334,6 +336,7 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
                     // find scanner with ID in the device list
                     //ex_info.active = activeReader.isActive
                     ex_info.setActive(activeReader.isActive())
+                    
 //                    ex_info.connectionType = activeReader.getConnectionType()
                     ex_info.setConnectionType(activeReader.getConnectionType())
 //                    ScannerEngine.shared().connectScanner(activeReader.getReaderID())
@@ -538,22 +541,20 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
         print("LM: srfidEventTriggerNotify")
         
         print("\nTriggerEvent: \(triggerEvent) (\(triggerEvent == SRFID_TRIGGEREVENT_PRESSED ? "PRESS" : "RELEASE"))\n")
-//        for (id<zt_IRfidAppEngineTriggerEventDelegate> delegate in m_TriggerEventDelegates )
-//            {
-//                if (delegate != nil && ([[[zt_RfidAppEngine sharedAppEngine] activeReader] getBatchModeRepeat] == NO))
-//                {
-//                    dispatch_async([m_RadioOperationEngine getQueue], ^{
-//                        dispatch_async(dispatch_get_main_queue(), ^{
-//                            if (SRFID_TRIGGEREVENT_SCAN_RELEASED == triggerEvent || SRFID_TRIGGEREVENT_SCAN_PRESSED == triggerEvent){
-//                                NSLog(@"Scan_Notification_Event: (%@)\n", (triggerEvent == SRFID_TRIGGEREVENT_SCAN_PRESSED ? @"PRESS" : @"RELEASE"));
-//                                [delegate onNewTriggerEvent:SRFID_TRIGGEREVENT_PRESSED == triggerEvent typeRFID:NO];
-//                            }else{
-//                                [delegate onNewTriggerEvent:SRFID_TRIGGEREVENT_PRESSED == triggerEvent typeRFID:YES];
-//                            }
-//                        });
-//                    });
-//                }
-//            }
+        for delegate in m_TriggerEventDelegates! {
+            if delegate != nil && (zt_RfidAppEngine.shared().activeReader().getBatchModeRepeat() == false) {
+                m_RadioOperationEngine?.getQueue().async(execute: {
+                    DispatchQueue.main.async(execute: {
+                        if SRFID_TRIGGEREVENT_SCAN_RELEASED == triggerEvent || SRFID_TRIGGEREVENT_SCAN_PRESSED == triggerEvent {
+                            print("Scan_Notification_Event: (\(triggerEvent == SRFID_TRIGGEREVENT_SCAN_PRESSED ? "PRESS" : "RELEASE"))\n")
+                            delegate.onNewTriggerEvent(SRFID_TRIGGEREVENT_PRESSED == triggerEvent, typeRFID: false)
+                        } else {
+                            delegate.onNewTriggerEvent(SRFID_TRIGGEREVENT_PRESSED == triggerEvent, typeRFID: true)
+                        }
+                    })
+                })
+            }
+        }
     }
     
     func srfidEventBatteryNotity(_ readerID: Int32, aBatteryEvent batteryEvent: srfidBatteryEvent!) {
@@ -796,10 +797,12 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
     
     //Begin: My Method
     func startAutoReconnect(_ ex_info: srfidReaderInfo?) {
+
 //        let isAutoReconnectSessionEnabled = UserDefaults.standard.bool(forKey: ZT_AUTO_CONNECT_CONFIG_IS_ENABLED)
 //        if !isAutoReconnectSessionEnabled {
 //            return
 //        }
+
         if !(ex_info?.isActive())! == true {
             if isShouldAutoConnect(ex_info) {
                 connect(Int((ex_info?.getReaderID())!))
@@ -947,36 +950,38 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
                 let decodeData = BarcodeData(data: barcodeData!, ofType: Int32(barcodeType))
                 barcodeList.add(decodeData)
                 scannerName = barcodeList.getScannerName()
+
                 print("LM: \( decodeData.getDecodeAsString(usingEncoding: String.Encoding.utf8.rawValue)) -- \(barcodeList.getScannerName())")
+
+                
+               
             }
         }
     }
-    
     func isShouldAutoConnect(_ readerInfo: srfidReaderInfo?) -> Bool {
-//           let readerId = (UserDefaults.standard.object(forKey: ZT_AUTO_CONNECT_READER_ID) as? NSNumber)?.intValue ?? 0
-//           let isTerminate = UserDefaults.standard.bool(forKey: ZT_AUTO_CONNECT_TERMINATE_STATE)
-//           if readerId == (readerInfo?.getReaderID())! && isTerminate {
-//               return true
-//           } else {
-//               return false
-//           }
-        return true
-       }
-       func connect(_ reader_id: Int) {
-           if let m_RfidSdkApi {
-               let conn_result = m_RfidSdkApi.srfidEstablishCommunicationSession(Int32(reader_id))
-               //Setting batch mode to default after connect and will be set back if and when event is received
-   //            m_ActiveReader.batchModeStatus = false
-               m_ActiveReader?.setBatchModeStatus(false)
-               if SRFID_RESULT_SUCCESS != conn_result {
+        let readerId = (UserDefaults.standard.object(forKey: ZT_AUTO_CONNECT_READER_ID) as? NSNumber)?.intValue ?? 0
+        let isTerminate = UserDefaults.standard.bool(forKey: ZT_AUTO_CONNECT_TERMINATE_STATE)
+        if readerId == (readerInfo?.getReaderID())! && isTerminate {
+            return true
+        } else {
+            return false
+        }
+    }
+    func connect(_ reader_id: Int) {
+        if let m_RfidSdkApi {
+            let conn_result = m_RfidSdkApi.srfidEstablishCommunicationSession(Int32(reader_id))
+            //Setting batch mode to default after connect and will be set back if and when event is received
+//            m_ActiveReader.batchModeStatus = false
+            if SRFID_RESULT_SUCCESS != conn_result {
 
-                   DispatchQueue.main.async(execute: { [self] in
-   //                    showMessageBox("Connection failed")
-                       print("LM: Connection failed")
-                   })
-               }
-           }
-       }
+                DispatchQueue.main.async(execute: { [self] in
+//                    showMessageBox("Connection failed")
+                    print("LM: Connection failed")
+                })
+            }
+        }
+    }
+ 
     //End: My Method
     
 }
