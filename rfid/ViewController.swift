@@ -959,13 +959,14 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
         }
     }
     func isShouldAutoConnect(_ readerInfo: srfidReaderInfo?) -> Bool {
-        let readerId = (UserDefaults.standard.object(forKey: ZT_AUTO_CONNECT_READER_ID) as? NSNumber)?.intValue ?? 0
-        let isTerminate = UserDefaults.standard.bool(forKey: ZT_AUTO_CONNECT_TERMINATE_STATE)
-        if readerId == (readerInfo?.getReaderID())! && isTerminate {
-            return true
-        } else {
-            return false
-        }
+//        let readerId = (UserDefaults.standard.object(forKey: ZT_AUTO_CONNECT_READER_ID) as? NSNumber)?.intValue ?? 0
+//        let isTerminate = UserDefaults.standard.bool(forKey: ZT_AUTO_CONNECT_TERMINATE_STATE)
+//        if readerId == (readerInfo?.getReaderID())! && isTerminate {
+//            return true
+//        } else {
+//            return false
+//        }
+        return true
     }
     func connect(_ reader_id: Int) {
         if let m_RfidSdkApi {
