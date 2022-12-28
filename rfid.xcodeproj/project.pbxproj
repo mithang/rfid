@@ -25,6 +25,7 @@
 		9ACB43FC295B69860038C2E7 /* BarcodeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB43F6295B69860038C2E7 /* BarcodeData.m */; };
 		9ACB43FD295B69860038C2E7 /* BarcodeTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB43F9295B69860038C2E7 /* BarcodeTypes.m */; };
 		9ACB43FE295B69860038C2E7 /* BarcodeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB43FA295B69860038C2E7 /* BarcodeList.m */; };
+		BFCD4CE3295C8CBB00479D96 /* ActiveReader.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCD4CE1295C8CBB00479D96 /* ActiveReader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		9ACB43FB295B69860038C2E7 /* BarcodeTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarcodeTypes.h; sourceTree = "<group>"; };
 		9ACB43FF295B6D490038C2E7 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		9ACB4400295B6D890038C2E7 /* ui_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_config.h; sourceTree = "<group>"; };
+		BFCD4CE1295C8CBB00479D96 /* ActiveReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActiveReader.m; path = ../123RFID_IOS_Mobile_1.1.24/Zebra_RFID_SDK_iOS_v1.1.24_SRC/RFIDDemoApp/ActiveReader.m; sourceTree = "<group>"; };
+		BFCD4CE2295C8CBB00479D96 /* ActiveReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveReader.h; path = ../123RFID_IOS_Mobile_1.1.24/Zebra_RFID_SDK_iOS_v1.1.24_SRC/RFIDDemoApp/ActiveReader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 		9ACB43C1295A096A0038C2E7 = {
 			isa = PBXGroup;
 			children = (
+				BFCD4CE2295C8CBB00479D96 /* ActiveReader.h */,
+				BFCD4CE1295C8CBB00479D96 /* ActiveReader.m */,
 				9ACB4400295B6D890038C2E7 /* ui_config.h */,
 				9ACB43FF295B6D490038C2E7 /* config.h */,
 				9ACB43F7295B69860038C2E7 /* BarcodeData.h */,
@@ -207,6 +212,7 @@
 				9ACB43D2295A096A0038C2E7 /* ViewController.swift in Sources */,
 				9ACB43CE295A096A0038C2E7 /* AppDelegate.swift in Sources */,
 				9ACB43FC295B69860038C2E7 /* BarcodeData.m in Sources */,
+				BFCD4CE3295C8CBB00479D96 /* ActiveReader.m in Sources */,
 				9ACB43EE295A0F760038C2E7 /* demo.m in Sources */,
 				9ACB43FE295B69860038C2E7 /* BarcodeList.m in Sources */,
 				9ACB43FD295B69860038C2E7 /* BarcodeTypes.m in Sources */,
@@ -360,7 +366,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4NWZ65DQ9H;
+				DEVELOPMENT_TEAM = 7BKP4J9P38;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = rfid/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -398,7 +404,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4NWZ65DQ9H;
+				DEVELOPMENT_TEAM = 7BKP4J9P38;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = rfid/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -13,3 +13,4 @@
 #import "BarcodeTypes.h"
 #import "config.h"
 #import "ui_config.h"
+#import "ActiveReader.h"
