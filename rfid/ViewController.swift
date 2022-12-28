@@ -33,7 +33,7 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
     var m_DeviceInfoList: [srfidReaderInfo]?
     var m_DeviceInfoListGuard: NSLock? = nil
 
-    var m_DevListDelegates: [AnyHashable]?
+    var m_DevListDelegates: [zt_IRfidAppEngineDevListDelegate]?
     var m_ReadEventListDelegates: [AnyHashable]?
     var m_TriggerEventDelegates: [zt_IRfidAppEngineTriggerEventDelegate]?
     var m_BatteryEventDelegates: [AnyHashable]?
@@ -69,7 +69,7 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
 
         m_DeviceInfoList = [srfidReaderInfo]()
         m_DeviceInfoListGuard = NSLock()
-        m_DevListDelegates = [AnyHashable]()
+        m_DevListDelegates = [zt_IRfidAppEngineDevListDelegate]()
 
         m_ReadEventListDelegates = [AnyHashable]()
 //
@@ -212,12 +212,13 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
 //            }
 //        }
 
-//        // notify dev list delegates
-//        for delegate in m_DevListDelegates {
+        // notify dev list delegates
+        for delegate in m_DevListDelegates! {
 //            if let delegate {
 //                result = delegate.deviceListHasBeenUpdated()
 //            }
-//        }
+            delegate.deviceListHasBeenUpdated()
+        }
 
         
 //        if isInBackgroundMode() == false {
@@ -973,6 +974,7 @@ class ViewController: UIViewController,srfidISdkApiDelegate,ISbtSdkApiDelegate {
             let conn_result = m_RfidSdkApi.srfidEstablishCommunicationSession(Int32(reader_id))
             //Setting batch mode to default after connect and will be set back if and when event is received
 //            m_ActiveReader.batchModeStatus = false
+            m_ActiveReader?.setBatchModeStatus(false)
             if SRFID_RESULT_SUCCESS != conn_result {
 
                 DispatchQueue.main.async(execute: { [self] in
