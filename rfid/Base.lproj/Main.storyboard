@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c6R-y1-yA8">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,10 +22,106 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-27"/>
+            <point key="canvasLocation" x="2686.2595419847326" y="-199.29577464788733"/>
+        </scene>
+        <!--RFIDVC-->
+        <scene sceneID="bqA-BH-76n">
+            <objects>
+                <viewController id="X0r-Bb-0hz" customClass="RFIDVC" customModule="rfid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TAq-u1-8tZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xj-kA-T7l">
+                                <rect key="frame" x="146.66666666666666" y="408.66666666666669" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="DSe-hD-fR0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="START"/>
+                                <connections>
+                                    <action selector="clickOnOffEventRfidClick:" destination="X0r-Bb-0hz" eventType="touchUpInside" id="8W2-4P-5lB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G8D-RW-o30"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Xj-kA-T7l" firstAttribute="centerX" secondItem="TAq-u1-8tZ" secondAttribute="centerX" id="KUe-9w-hQz"/>
+                            <constraint firstItem="6Xj-kA-T7l" firstAttribute="centerY" secondItem="TAq-u1-8tZ" secondAttribute="centerY" id="SDy-Sx-5ot"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DQR-8I-m7Q"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4dr-do-EqB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866.4122137404579" y="-199.29577464788733"/>
+        </scene>
+        <!--BarcodeVC-->
+        <scene sceneID="QRf-b8-eVM">
+            <objects>
+                <viewController id="QmP-II-2VD" customClass="BarcodeVC" customModule="rfid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ml-ah-r4j">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARCODE SCREEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSY-fO-0hT">
+                                <rect key="frame" x="123.00000000000001" y="415.66666666666669" width="147.33333333333337" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htr-rK-Bx9">
+                                <rect key="frame" x="0.0" y="456.66666666666669" width="393" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Sbw-lo-lO3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="GO TO RFID SCREEN"/>
+                                <connections>
+                                    <segue destination="X0r-Bb-0hz" kind="show" id="a9L-bP-oHE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FzI-9l-f4H"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Htr-rK-Bx9" firstAttribute="leading" secondItem="FzI-9l-f4H" secondAttribute="leading" id="8jc-Ko-sBG"/>
+                            <constraint firstItem="Htr-rK-Bx9" firstAttribute="top" secondItem="NSY-fO-0hT" secondAttribute="bottom" constant="20" id="Cja-0h-Dgy"/>
+                            <constraint firstItem="NSY-fO-0hT" firstAttribute="centerX" secondItem="7Ml-ah-r4j" secondAttribute="centerX" id="D46-PO-zCB"/>
+                            <constraint firstItem="FzI-9l-f4H" firstAttribute="trailing" secondItem="Htr-rK-Bx9" secondAttribute="trailing" id="IAv-Jd-Vih"/>
+                            <constraint firstItem="NSY-fO-0hT" firstAttribute="centerY" secondItem="7Ml-ah-r4j" secondAttribute="centerY" id="v8B-Gg-WmR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZHZ-wZ-OUc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vaV-8h-CkR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1205.3435114503816" y="-199.29577464788733"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IGD-ug-8b9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c6R-y1-yA8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JKE-SW-e5E">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QmP-II-2VD" kind="relationship" relationship="rootViewController" id="udT-dF-nuV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zuv-CC-qsU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278.62595419847327" y="-199.29577464788733"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

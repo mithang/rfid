@@ -42,6 +42,8 @@
 		9ACB4431295C985C0038C2E7 /* ScannerEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4430295C985C0038C2E7 /* ScannerEngine.m */; };
 		9ACB4433295C99380038C2E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB4432295C99380038C2E7 /* Foundation.framework */; };
 		9ACB4435295C99440038C2E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB4434295C99440038C2E7 /* UIKit.framework */; };
+		9ACB4437295CB36D0038C2E7 /* RFIDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4436295CB36D0038C2E7 /* RFIDVC.swift */; };
+		9ACB4439295CB3810038C2E7 /* BarcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB4438295CB3810038C2E7 /* BarcodeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +107,8 @@
 		9ACB4430295C985C0038C2E7 /* ScannerEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerEngine.m; sourceTree = "<group>"; };
 		9ACB4432295C99380038C2E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9ACB4434295C99440038C2E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9ACB4436295CB36D0038C2E7 /* RFIDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDVC.swift; sourceTree = "<group>"; };
+		9ACB4438295CB3810038C2E7 /* BarcodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,8 @@
 				9ACB43D6295A096B0038C2E7 /* Assets.xcassets */,
 				9ACB43D8295A096B0038C2E7 /* LaunchScreen.storyboard */,
 				9ACB43DB295A096B0038C2E7 /* Info.plist */,
+				9ACB4436295CB36D0038C2E7 /* RFIDVC.swift */,
+				9ACB4438295CB3810038C2E7 /* BarcodeVC.swift */,
 			);
 			path = rfid;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 				9ACB441E295C933B0038C2E7 /* TaglistDataObject.m in Sources */,
 				9ACB442A295C94680038C2E7 /* LinkProfileObject.m in Sources */,
 				9ACB4403295C8B930038C2E7 /* ActiveReader.m in Sources */,
+				9ACB4439295CB3810038C2E7 /* BarcodeVC.swift in Sources */,
 				9ACB43EE295A0F760038C2E7 /* demo.m in Sources */,
 				9ACB4409295C90FE0038C2E7 /* InventoryData.m in Sources */,
 				9ACB4427295C93DF0038C2E7 /* MBProgressHUD.m in Sources */,
@@ -310,6 +317,7 @@
 				9ACB440F295C919A0038C2E7 /* RfidAppEngine.m in Sources */,
 				9ACB4406295C90720038C2E7 /* RadioOperationEngine.m in Sources */,
 				9ACB43D0295A096A0038C2E7 /* SceneDelegate.swift in Sources */,
+				9ACB4437295CB36D0038C2E7 /* RFIDVC.swift in Sources */,
 				9ACB4415295C92140038C2E7 /* RegionData.m in Sources */,
 				9ACB43F5295B68C50038C2E7 /* ScannerObject.m in Sources */,
 			);
