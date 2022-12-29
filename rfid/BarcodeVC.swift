@@ -102,23 +102,23 @@ class BarcodeVC: UIViewController,ISbtSdkApiDelegate {
     }
     
     func sbtEventBarcode(_ barcodeData: String!, barcodeType: Int32, fromScanner scannerID: Int32) {
-        print("LM: Barcode Event: data event, \(barcodeData)")
+        print("LM: Barcode Event: data event, \(barcodeData!)")
     }
     
     func sbtEventBarcodeData(_ barcodeData: Data!, barcodeType: Int32, fromScanner scannerID: Int32) {
-        let decodeData = Data(base64Encoded: barcodeData)
-//        let decodeDataString = String(bytes: UInt8(decodeData), encoding: .utf8)
-        var decodeDataString = ""
-        if let string = String(data: decodeData!, encoding: .utf8) {
-            decodeDataString = string
-        } else {
-            print("LM: not a valid UTF-8 sequence")
-        }
-
-        print("LM: Barcode Event Data:  \(decodeDataString ?? "")")
-        DispatchQueue.main.async(execute: { [self] in
-//            textView_barcode_data.text = decodeDataString
-        })
+//        let decodeData = Data(base64Encoded: barcodeData)
+////        let decodeDataString = String(bytes: UInt8(decodeData), encoding: .utf8)
+//        var decodeDataString = ""
+//        if let string = String(data: decodeData, encoding: .utf8) {
+//            decodeDataString = string
+//        } else {
+//            print("LM: not a valid UTF-8 sequence")
+//        }
+//
+//        print("LM: Barcode Event Data:  \(decodeDataString ?? "")")
+//        DispatchQueue.main.async(execute: { [self] in
+////            textView_barcode_data.text = decodeDataString
+//        })
     }
     
     func sbtEventFirmwareUpdate(_ fwUpdateEventObj: FirmwareUpdateEvent!) {

@@ -16,7 +16,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "966"
             endingLineNumber = "966"
-            landmarkName = "connect(_:)"
+            landmarkName = "isShouldAutoConnect(_:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -64,71 +64,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "967"
             endingLineNumber = "967"
-            landmarkName = "connect(_:)"
+            landmarkName = "isShouldAutoConnect(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FE40D9E4-0D9D-42DF-93F0-4567B93C443A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "rfid/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "973"
-            endingLineNumber = "973"
-            landmarkName = "connect(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FE40D9E4-0D9D-42DF-93F0-4567B93C443A - ffa72994cad1df84"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "rfid.ViewController.connect(Swift.Int) -&gt; ()"
-                  moduleName = "rfid"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mylepham/Documents/Projects/MyleTest/rfid/rfid/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "973"
-                  endingLineNumber = "973"
-                  offsetFromSymbolStart = "668">
-               </Location>
-               <Location
-                  uuid = "FE40D9E4-0D9D-42DF-93F0-4567B93C443A - ffa72994cad1df84"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "rfid.ViewController.connect(Swift.Int) -&gt; ()"
-                  moduleName = "rfid"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mylepham/Documents/Projects/MyleTest/rfid/rfid/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "973"
-                  endingLineNumber = "973"
-                  offsetFromSymbolStart = "696">
-               </Location>
-               <Location
-                  uuid = "FE40D9E4-0D9D-42DF-93F0-4567B93C443A - 3c00ea83918d4ff0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in rfid.ViewController.connect(Swift.Int) -&gt; ()"
-                  moduleName = "rfid"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mylepham/Documents/Projects/MyleTest/rfid/rfid/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "975"
-                  endingLineNumber = "975"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -16,8 +16,9 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        registerOfcallbackInterfaceWithSDK()
-        subcribeForEvent()
+//        registerOfcallbackInterfaceWithSDK()
+//        subcribeForEvent()
+        startRfid()
         
     }
     @IBAction func clickOnOffEventRfidClick(_ sender: Any) {
@@ -34,28 +35,53 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func registerOfcallbackInterfaceWithSDK() {
-        // registration of callback interface with SDK
+    //start and searching device
+    func startRfid(){
+
+        // variable to store single shared instance of API object
+        
+        // receiving single shared instance of API object
         apiInstance = srfidSdkFactory.createRfidSdkApiInstance()
         apiInstance?.srfidSetDelegate(self)
-        // getting SDK version string
-        let sdk_version = apiInstance?.srfidGetSdkVersion()
-        print("LM: Zebra RFID SDK version: \(sdk_version ?? "")\n")
         
-    }
-    
-    func subcribeForEvent() {
-        let notifications_mask_reader_connection = SRFID_EVENT_READER_APPEARANCE | SRFID_EVENT_READER_DISAPPEARANCE | SRFID_EVENT_SESSION_ESTABLISHMENT | SRFID_EVENT_SESSION_TERMINATION
-        apiInstance?.srfidSubsribe(forEvents: Int32(notifications_mask_reader_connection))
-        // subscribe for battery and handheld trigger related events
-        apiInstance?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_BATTERY | SRFID_EVENT_MASK_TRIGGER))
+        var op_mode =  SRFID_OPMODE_MFI
+
+        let notifications_mask = SRFID_EVENT_READER_APPEARANCE | SRFID_EVENT_READER_DISAPPEARANCE | SRFID_EVENT_SESSION_ESTABLISHMENT | SRFID_EVENT_SESSION_TERMINATION
+        apiInstance?.srfidSetOperationalMode(Int32(op_mode))
+        apiInstance?.srfidSubsribe(forEvents: Int32(notifications_mask))
         apiInstance?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_READ | SRFID_EVENT_MASK_STATUS | SRFID_EVENT_MASK_STATUS_OPERENDSUMMARY))
         apiInstance?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_TEMPERATURE | SRFID_EVENT_MASK_POWER | SRFID_EVENT_MASK_DATABASE))
+        //[apiInstance srfidUnsubsribeForEvents:(SRFID_EVENT_MASK_RADIOERROR | SRFID_EVENT_MASK_POWER | SRFID_EVENT_MASK_TEMPERATURE)];
         apiInstance?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_PROXIMITY))
         apiInstance?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_TRIGGER))
         apiInstance?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_BATTERY))
         apiInstance?.srfidSubsribe(forEvents: Int32(SRFID_EVENT_MASK_MULTI_PROXIMITY))
+        apiInstance?.srfidEnableAvailableReadersDetection(true)
+        apiInstance?.srfidEnableAutomaticSessionReestablishment(false)
+        
+        // getting SDK version string
+        let sdk_version = apiInstance?.srfidGetSdkVersion()
+        print("LM: Zebra RFID SDK version: \(sdk_version ?? "")\n")
+        
+        
+    }
+
+    func connectReader(_ reader_id: Int) {
+        if let apiInstance {
+            let conn_result = apiInstance.srfidEstablishCommunicationSession(Int32(reader_id))
+            //Setting batch mode to default after connect and will be set back if and when event is received
+//            m_ActiveReader.batchModeStatus = false
+//            m_ActiveReader?.setBatchModeStatus(false)
+            if SRFID_RESULT_SUCCESS != conn_result {
+
+                DispatchQueue.main.async(execute: { [self] in
+//                    showMessageBox("Connection failed")
+                    print("LM: Connection failed")
+                })
+            }else{
+                print("LM: Connection success")
+            }
+        }
     }
     
     func getAvialableReaderList() {
@@ -69,10 +95,12 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
         apiInstance?.srfidGetAvailableReadersList(&available_readers)
         // merge active and available readers to a single list
         var readers: [srfidReaderInfo] = []
-
-        readers.append(contentsOf:active_readers as! [srfidReaderInfo])
-        readers.append(contentsOf:available_readers as! [srfidReaderInfo])
-       
+        if active_readers != nil {
+            readers.append(contentsOf:active_readers as! [srfidReaderInfo])
+        }
+        if available_readers != nil{
+            readers.append(contentsOf:available_readers as! [srfidReaderInfo])
+        }
         for info in readers {
             
               // print the information about RFID reader represented by srfidReaderInfo object
@@ -469,6 +497,7 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
     
     func srfidEventReaderAppeared(_ availableReader: srfidReaderInfo!) {
         print("LM: srfidEventReaderAppeared \(availableReader.getReaderName()) -- \(availableReader.getReaderID()) ")
+        connectReader(Int(availableReader.getReaderID()))
         
     }
     
@@ -479,6 +508,17 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
     func srfidEventCommunicationSessionEstablished(_ activeReader: srfidReaderInfo!) {
         print("LM: srfidEventCommunicationSessionEstablished  \(activeReader.getReaderName()) -- \(activeReader.getReaderID())")
         print("LM: Reader Connected ")
+        let password = ""
+        let result = apiInstance!.srfidEstablishAsciiConnection(
+            activeReader.getReaderID(),
+            aPassword: password)
+        if SRFID_RESULT_SUCCESS == result {
+            print("LM: ASCII connection has been established\n")
+        } else if SRFID_RESULT_WRONG_ASCII_PASSWORD == result {
+            print("LM: Incorrect ASCII connection password\n")
+        } else {
+            print("LM: Failed to establish ASCII connection\n")
+        }
         connectedRederID = Int(activeReader.getReaderID())
        
     }
@@ -489,7 +529,7 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
     }
     
     func srfidEventReadNotify(_ readerID: Int32, aTagData tagData: srfidTagData!) {
-        print("LM: srfidEventReadNotify ")
+        print("LM: srfidEventReadNotify : tagId = \(tagData.getTagId()), memory_bank = \(tagData.getMemoryBankData() == nil ? "null" : tagData.getMemoryBankData())\n")
     }
     
     func srfidEventStatusNotify(_ readerID: Int32, aEvent event: SRFID_EVENT_STATUS, aNotification notificationData: Any!) {
