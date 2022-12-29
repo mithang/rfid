@@ -469,6 +469,7 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
     
     func srfidEventReaderAppeared(_ availableReader: srfidReaderInfo!) {
         print("LM: srfidEventReaderAppeared \(availableReader.getReaderName()) -- \(availableReader.getReaderID()) ")
+        
     }
     
     func srfidEventReaderDisappeared(_ readerID: Int32) {
@@ -478,6 +479,7 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
     func srfidEventCommunicationSessionEstablished(_ activeReader: srfidReaderInfo!) {
         print("LM: srfidEventCommunicationSessionEstablished  \(activeReader.getReaderName()) -- \(activeReader.getReaderID())")
         print("LM: Reader Connected ")
+        connectedRederID = Int(activeReader.getReaderID())
        
     }
     
