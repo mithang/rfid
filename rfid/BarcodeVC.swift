@@ -85,6 +85,7 @@ class BarcodeVC: UIViewController,ISbtSdkApiDelegate {
     
     func sbtEventScannerAppeared(_ availableScanner: SbtScannerInfo!) {
         print("LM: Device has appeared, Device name \(availableScanner.getScannerName()) -- \(availableScanner.getScannerID())")
+        connectScanner(Int(availableScanner.getScannerID()))
     }
     
     func sbtEventScannerDisappeared(_ scannerID: Int32) {
