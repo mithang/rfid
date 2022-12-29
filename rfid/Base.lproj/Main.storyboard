@@ -52,6 +52,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DQR-8I-m7Q"/>
+                    <connections>
+                        <outlet property="lbButton" destination="6Xj-kA-T7l" id="ySK-8J-ZxC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dr-do-EqB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

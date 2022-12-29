@@ -12,6 +12,7 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
     var apiInstance: srfidISdkApi? = nil
     var connectedRederID = 0
 
+    @IBOutlet var lbButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -456,44 +457,9 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
         } while (0 != 0)
     }
     
-    func srfidEventStatusNotify(_ readerID: Int, aEvent event: SRFID_EVENT_STATUS, aNotification notificationData: Any?) {
-        print("LM: Radio operation has \((SRFID_EVENT_STATUS_OPERATION_START == event) ? "started" : "stopped")\n")
-    }
+
     
-    func srfidEventReadNotify(_ readerID: Int, aTagData tagData: srfidTagData?) {
-        // print the received tag data
-        print("LM: Tag data received from RFID reader with ID = \(readerID)\n")
-        if let getTagId = tagData?.getTagId() {
-            print("LM: Tag id: \(getTagId)\n")
-        }
-        let bank = tagData?.getMemoryBank()
-        if SRFID_MEMORYBANK_NONE != bank {
-            var str_bank = ""
-            switch bank {
-            case SRFID_MEMORYBANK_EPC:
-                str_bank = "EPC"
-            case SRFID_MEMORYBANK_TID:
-                str_bank = "TID"
-            case SRFID_MEMORYBANK_USER:
-                str_bank = "USER"
-            case SRFID_MEMORYBANK_RESV:
-                str_bank = "RESV"
-            case SRFID_MEMORYBANK_NONE:
-                str_bank = "None"
-            case SRFID_MEMORYBANK_ACCESS:
-                str_bank = "Acess"
-            case SRFID_MEMORYBANK_KILL:
-                str_bank = "Kill"
-            case SRFID_MEMORYBANK_ALL:
-                str_bank = "All"
-            default:
-                break
-            }
-            if let getMemoryBankData = tagData?.getMemoryBank() {
-                print("LM: \(str_bank) memory bank data: \(getMemoryBankData)\n")
-            }
-        }
-    }
+ 
     
     func srfidEventReaderAppeared(_ availableReader: srfidReaderInfo!) {
         print("LM: srfidEventReaderAppeared \(availableReader.getReaderName()) -- \(availableReader.getReaderID()) ")
@@ -530,10 +496,45 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
     
     func srfidEventReadNotify(_ readerID: Int32, aTagData tagData: srfidTagData!) {
         print("LM: srfidEventReadNotify : tagId = \(tagData.getTagId()), memory_bank = \(tagData.getMemoryBankData() == nil ? "null" : tagData.getMemoryBankData())\n")
+        // print the received tag data
+//        print("LM: Tag data received from RFID reader with ID = \(readerID)\n")
+//        if let getTagId = tagData?.getTagId() {
+//            print("LM: Tag id: \(getTagId)\n")
+//        }
+//        let bank = tagData?.getMemoryBank()
+//        if SRFID_MEMORYBANK_NONE != bank {
+//            var str_bank = ""
+//            switch bank {
+//            case SRFID_MEMORYBANK_EPC:
+//                str_bank = "EPC"
+//            case SRFID_MEMORYBANK_TID:
+//                str_bank = "TID"
+//            case SRFID_MEMORYBANK_USER:
+//                str_bank = "USER"
+//            case SRFID_MEMORYBANK_RESV:
+//                str_bank = "RESV"
+//            case SRFID_MEMORYBANK_NONE:
+//                str_bank = "None"
+//            case SRFID_MEMORYBANK_ACCESS:
+//                str_bank = "Acess"
+//            case SRFID_MEMORYBANK_KILL:
+//                str_bank = "Kill"
+//            case SRFID_MEMORYBANK_ALL:
+//                str_bank = "All"
+//            default:
+//                break
+//            }
+//            if let getMemoryBankData = tagData?.getMemoryBank() {
+//                print("LM: \(str_bank) memory bank data: \(getMemoryBankData)\n")
+//            }
+//        }
     }
-    
+
+    //Start and stop UI
     func srfidEventStatusNotify(_ readerID: Int32, aEvent event: SRFID_EVENT_STATUS, aNotification notificationData: Any!) {
         print("LM: srfidEventStatusNotify ")
+        print("LM: Radio operation has \((SRFID_EVENT_STATUS_OPERATION_START == event) ? "started" : "stopped")\n")
+        lbButton.setTitle((SRFID_EVENT_STATUS_OPERATION_START == event) ? "started" : "stopped", for: UIControl.State.normal)
     }
     
     func srfidEventProximityNotify(_ readerID: Int32, aProximityPercent proximityPercent: Int32) {
@@ -543,7 +544,7 @@ class RFIDVC: UIViewController,srfidISdkApiDelegate {
     func srfidEventMultiProximityNotify(_ readerID: Int32, aTagData tagData: srfidTagData!) {
         print("LM: srfidEventMultiProximityNotify ")
     }
-    
+    //Press and Relase pysical device
     func srfidEventTriggerNotify(_ readerID: Int32, aTriggerEvent triggerEvent: SRFID_TRIGGEREVENT) {
         print("LM: srfidEventTriggerNotify ")
         print("LM: TriggerEvent: \(triggerEvent) (\(triggerEvent == SRFID_TRIGGEREVENT_PRESSED ? "PRESS" : "RELEASE"))\n")
